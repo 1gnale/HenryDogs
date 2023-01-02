@@ -1,11 +1,14 @@
-import './App.css';
+import { Route } from "react-router-dom";
+import DetailPage from "./pages/Details/details";
+import { HomePage } from "./pages/homePage/homePage"
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Henry Dogs</h1>
-    </div>
-  );
+    <>
+      <Route exact path="/" component={HomePage}/>
+      <Route exact path="/dogs/:id" component={DetailPage}/>
+    </>
+  )
 }
 
 export default App;
