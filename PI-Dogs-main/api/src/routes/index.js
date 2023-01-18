@@ -6,11 +6,6 @@ const temperamentsRouter = require("./temperamentsRouter")
 
 
 const router = Router();
-const cors = require("cors");
-
-router.options("*", cors({ origin: 'https://henry-dogs-kohl.vercel.app/', optionsSuccessStatus: 200 }));
-
- router.use(cors({ origin: "https://henry-dogs-kohl.vercel.app/", optionsSuccessStatus: 200 }));
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
