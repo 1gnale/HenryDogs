@@ -10,7 +10,7 @@ export const FILTER_BY_WEIGHT = "FILTER_BY_WEIGHT";
 export function fetchDogs() {
   return async function (dispatch) {
     try {
-      var allDogs = await axios.get(`http://localhost:3001/dogs`);
+      var allDogs = await axios.get(`https://henrydogs-production.up.railway.app//dogs`);
       return dispatch({
         type: GET_DOGS,
         payload: allDogs.data,
@@ -25,7 +25,7 @@ export function fetchTemperaments() {
   return async function (dispatch) {
     try {
       var allTemperaments = await axios.get(
-        `http://localhost:3001/temperaments`
+        `https://henrydogs-production.up.railway.app//temperaments`
       );
       return dispatch({
         type: GET_TEMPERAMENT,
@@ -41,7 +41,7 @@ export function fetchDogById(id) {
   return async function (dispatch) {
     try {
       const response = await axios.get(
-        `http://localhost:3001/dogs/${id}`
+        `https://henrydogs-production.up.railway.app//dogs/${id}`
       );
       return dispatch({
         type: GET_DETAILS,
@@ -57,7 +57,7 @@ export function fetchDogByName(name) {
   return async function (dispatch) {
     try {
       const response = await axios(
-        `http://localhost:3001/dogs?name=${name}`
+        `/dogs?name=${name}`
       );
       return dispatch({
         type: GET_NAME_DOG,
@@ -74,7 +74,7 @@ export function createDog(payload) {
   return async function (dispatch) {
     try {
       const response = await axios.post(
-        "http://localhost:3001/dogs",
+        "https://henrydogs-production.up.railway.app//dogs",
         payload
       );
       return response;
