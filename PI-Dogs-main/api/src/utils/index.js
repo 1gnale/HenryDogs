@@ -12,15 +12,15 @@ const getBreedsDB = async ()=>{
         }
     })
 
-    const dbBreedsClean = dbBreeds.map((e)=>{
+    const dbBreedsClean = dbBreeds.map((e)=>{ 
         return{
             id: e.id,
             name: e.name,
             height: `${e.heightMin} - ${e.heightMax}`,
             weight: `${e.weightMin} - ${e.weightMax}`,
-            lifeSpan: e.age,
+            lifeSpan: e.age + " years",
             img: e.img,
-            temperament: e.temperament
+            temperament: e.Temperaments.map(e => e.name).toString().replace(/,/g,", ")
         }
     })
 
@@ -34,7 +34,7 @@ const getBreedsApi = async ()=>{
             id: e.id,
             name: e.name,
             height: e.height.metric,
-            weight: e.weight.metric,
+            weight: isNaN(e.weight.metric[0])? "5 - 30" : e.weight.metric,
             lifeSpan: e.life_span,
             temperament: e.temperament,
             img: e.image.url

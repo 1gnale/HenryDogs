@@ -4,7 +4,7 @@ const { Temperament } = require("../db")
 const allTemperaments = async (req, res) => {
     try {
         const allBreeds = await getBreeds()
-        const temperaments = allBreeds.map(e => e.temperament + ", ")
+        const temperaments = allBreeds.map(e => e.temperament === undefined ?  "" : e.temperament + ", ")
         const splitedTemperaments = temperaments.reduce((acc, curr)=>{
             return acc.concat(curr)
         }).toString()

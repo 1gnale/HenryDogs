@@ -13,6 +13,7 @@ const postDog = async (req, res) => {
       img: img,
       temperament: temperament
     });
+    await newDog.addTemperament(temperament)
     res.status(201).send(`The dog, ${name}, was created successfully`);
   } catch (error) {
     res.status(400).json({ error: error.message });

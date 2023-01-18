@@ -1,32 +1,29 @@
 import { Link } from "react-router-dom";
+import styles from "./styleCards.module.css"
 
 const DogsCards = (props) => {
     const {id, name, temperament,weight, img} = props
     return(
-        <table className="table">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Temperament</th>
-            <th>Weight</th>
-            <th>Image</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr key={id}>
-                <td><Link to={`/dogs/${id}`}>{name}</Link></td>
-                <td>{temperament}</td>
-                <td>{weight + " Kg"}</td>
-                <td>
-                     <img
-                     src = {img}
-                     alt = {name}
-                     style = {{height: 75}}
-                     />
-                </td>
-        </tr>
-        </tbody>
-        </table>
+        
+        
+
+
+<div className={styles.card}  style={{ textAlign: "center" }} key={id}>
+<Link to={`/dogs/${id}`} style={{textDecoration: "none", color: "#001213"}}>
+    <div className={styles.cardImage}>
+    <img src={img} alt={name}/>
+    </div>
+    <div className={styles.cardBody}>
+        <h2>{name}</h2>
+        <p><strong>Temperaments: </strong>{temperament}</p>
+        <p>{weight} Kg</p>
+        
+    </div>
+    </Link>
+
+
+
+    </div>
     )
 }
 

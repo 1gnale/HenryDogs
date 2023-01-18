@@ -52,10 +52,10 @@ import {
         const filterByWeight =
           payload === "desc"
             ? state.dogs.sort((a, b) => {
-                return b.maxWeight - a.maxWeight;
+                return (b.weight[0]+b.weight[1]) - (a.weight[0]+a.weight[1]);
               })
             : state.dogs.sort((a, b) => {
-                return a.maxWeight - b.maxWeight;
+                return (a.weight[0]+a.weight[1]) - (b.weight[0]+b.weight[1]);
               });
         return {
           ...state,

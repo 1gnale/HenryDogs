@@ -33,12 +33,8 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER
     },
     img:{
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    temperament:{
       type: DataTypes.TEXT,
-      allowNull:false
+      allowNull: false
     }
   },
   {

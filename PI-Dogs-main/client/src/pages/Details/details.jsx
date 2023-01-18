@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDogById } from "../../redux/action/actions";
 import DetailedDog from "../../components/dogDetail";
+import styles from "../homePage/home.module.css"
 const DetailPage = ()=>{
 
     const dispatch = useDispatch();
@@ -17,11 +18,9 @@ const DetailPage = ()=>{
       
       ;
     }, [dispatch, id]);
-
-    console.log(dog)
     return(
       <div>
-        {Object.entries(dog).length === 0 ? (<p>Wait a second</p>) :  (<DetailedDog name={dog[0].name}
+        {Object.entries(dog).length === 0 ? (<div style={{marginTop: "20%", marginLeft: "50%"}} className={styles.loader}> </div>) :  (<DetailedDog name={dog[0].name}
         img={dog[0].img}
         temperament={dog[0].temperament}
         weight={dog[0].weight}
