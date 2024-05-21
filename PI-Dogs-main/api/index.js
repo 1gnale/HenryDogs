@@ -30,21 +30,10 @@ conn.sync({ force: true }).then(() => {
 });
 
 
+//commit prueba
 
 
 
 
 
 
-
-
-
-
-
-
-
-const { limits } = require('fromMyHead');
-
-const limitBreaker = (limits) => {
-  const 
-}
